@@ -3,19 +3,23 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import Category from "./category";
 
 interface LinkProps {
     category: string;
 }
 
 const links = [
-    { category: "General", name: "Overview", href: "/", icon: "description" },
+    { category: "", name: "Overview", href: "/", icon: "description" },
+    { category: "Category", name: "Find folder by ID", href: "/find-folder-by-id", icon: "article" },
 ];
 
 export default function NavbarLinks({ category }: LinkProps) {
     const pathname = usePathname();
+    const addCategory = category ? <Category name={category} /> : null;
     return (
         <>
+            {addCategory}
             {links.map((link) => {
                 if (link.category === category)
                     return (

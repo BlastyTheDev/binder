@@ -1,6 +1,4 @@
-import { Roboto } from "next/font/google";
-
-const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500"] });
+import { roboto } from "@/app/layout";
 
 export default function RequestMethod() {
     return (
