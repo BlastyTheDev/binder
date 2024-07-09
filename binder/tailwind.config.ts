@@ -17,6 +17,9 @@ const config: Config = {
     colors: {
       "navbar-color": "#151515",
       "page-background": "#111111",
+      "greyed-text": "#8D8D8D",
+      "separator": "#343434",
+      "get-method": "#008D51",
     },
   },
   plugins: [],
