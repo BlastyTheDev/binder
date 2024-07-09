@@ -19,6 +19,7 @@ const config: Config = {
       "page-background": "#111111",
       "greyed-text": "#8D8D8D",
       "separator": "#343434",
+      "select-highlight": "#202020",
       "get-method": "#008D51",
     },
   },
