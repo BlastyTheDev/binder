@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Roboto } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Navbar from "./ui/navbar";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "700"]});
+const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500"]})
 export const metadata: Metadata = {
   title: "Binder",
   description: "API documentation",
@@ -21,21 +23,10 @@ export default function RootLayout({
       </head>
       <body className={`${poppins.className} bg-page-background antialiased`}>
         {children}
-        <main className="">
-          <div id="navbar" className="absolute bg-navbar-color w-1/5 h-full">
-            <h1 className="font-semibold text-4xl pt-2.5 pl-2.5">Project Name Here</h1>
-            <h3 className="text-greyed-text text-xl pt-0.5 pl-2.5">API Documentation</h3>
+        <main>
+          <Navbar />
 
-            <div className="bg-separator m-auto mt-4 w-11/12 h-px"></div>
-
-            <Link href={"/"}
-              className="block w-11/12 h-[50px] bg-separator rounded m-auto pl-3 mt-2">
-                <span className="material-symbols-outlined pt-3">description</span>
-                <span className="text-xl pl-[30px] align-super">Overview</span>
-            </Link>
-          </div>
-
-          <div id="content" className="absolute pl-[20vw] m-8">
+          <div className="pl-[20vw] m-8">
             <div id="endpoint-path">
               <span className="text-2xl text-greyed-text align-super pr-3">category</span>
               <span className="material-symbols-outlined pr-3">chevron_right</span>
@@ -45,8 +36,14 @@ export default function RootLayout({
             <h1 className="text-4xl mt-5">Find folder by ID</h1>
             <h3 className="text-base text-greyed-text mt-1">Short description of API endpoint</h3>
 
-            <div id="method" className="bg-greyed-text w-full h-12 outline-2">
-              what
+            <div className={`w-[76vw] h-12 mt-7 border-get-method border-[3px] rounded
+            ${roboto.className}`}>
+              <div className={`absolute w-20 h-8 bg-get-method rounded-sm m-[0.3rem]
+                font-medium text-lg text-center pt-0.5`}>GET
+              </div>
+              <div className="text-xl ml-[6rem] mt-[0.4rem]">
+                /example/endpoint/folder
+              </div>
             </div>
           </div>
         </main>
