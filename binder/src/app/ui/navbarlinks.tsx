@@ -3,16 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import Category from "./category";
+import Category from "@/app/ui/category";
+import { links } from "@/app/navbarlinks";
 
 interface LinkProps {
     category: string;
 }
-
-const links = [
-    { category: "", name: "Overview", href: "/", icon: "description" },
-    { category: "category", name: "Find folder by ID", href: "/find-folder-by-id", icon: "article" },
-];
 
 export default function NavbarLinks({ category }: LinkProps) {
     const pathname = usePathname();
