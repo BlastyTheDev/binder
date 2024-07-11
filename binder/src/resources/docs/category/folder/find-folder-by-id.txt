@@ -1,2 +1,4 @@
 Description: THis is the desc
 Method: GET
+Endpoint: /wow/endpoint/read/from/file
+

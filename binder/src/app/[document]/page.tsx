@@ -15,15 +15,17 @@ export default function Documentation({
 
     const file = fs.readFileSync(`./src/resources/docs/${docCategory}/${docPath}/${params.document}.txt`, 'utf-8');
     const lines = file.split('\n');
-    const descriptionLine = lines.find(line => line.includes('Description:'));
-    const description = descriptionLine ? descriptionLine.split('Description:')[1].trim() : '';
+    // const descriptionLine = lines.find(line => line.includes('Description:'));
+    // const description = descriptionLine ? descriptionLine.split('Description:')[1].trim() : '';
+    const description = lines.find(line => line.includes('Description:'))?.split('Description:')[1].trim() || '';
+    const endpoint = lines.find(line => line.includes('Endpoint:'))?.split('Endpoint:')[1].trim() || '';
 
     const method = lines.find(line => line.includes('Method:'))?.split('Method:')[1].trim() || '';
     return (
         <>
             <EndpointPath params={{ path: docPath, category: docCategory }} />
             <EndpointInfo params={{ name: docName, description: description }} />
-            <RequestMethod method={method} />
+            <RequestMethod method={method} endpoint={endpoint} />
         </>
     );
 }
