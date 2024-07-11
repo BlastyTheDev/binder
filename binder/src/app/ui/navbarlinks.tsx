@@ -11,7 +11,7 @@ interface LinkProps {
 
 const links = [
     { category: "", name: "Overview", href: "/", icon: "description" },
-    { category: "Category", name: "Find folder by ID", href: "/find-folder-by-id", icon: "article" },
+    { category: "category", name: "Find folder by ID", href: "/find-folder-by-id", icon: "article" },
 ];
 
 export default function NavbarLinks({ category }: LinkProps) {

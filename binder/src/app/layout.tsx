@@ -22,7 +22,9 @@ export default function RootLayout({
             </head>
             <body className={`${poppins.className} bg-page-background antialiased`}>
                 <Navbar />
-                {children}
+                <div className="ml-[20vw] p-8">
+                    {children}
+                </div>
             </body>
         </html>
     );
