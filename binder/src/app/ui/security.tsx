@@ -1,11 +1,12 @@
-interface SecurityProps {
+export interface SecurityProps {
     description: string;
     method: string;
     endpoint: string;
     security: [
         {
             type: string;
-            description: string;
+            name: string;
+            value: string;
             in: string;
         }
     ];
@@ -31,30 +32,35 @@ interface SecurityProps {
 export default function Security({
     securityMethods,
 }: {
-    securityMethods: Array<SecurityProps>;
+    securityMethods: Array<SecurityProps>; // why is this an array
 }) {
     return (
         <div className="mt-7">
             <h2 className="text-2xl">Security</h2>
             {Array.isArray(securityMethods) && securityMethods.map((method, index) => {
                 const lock = method.security.length < 1 ? "lock_open" : "lock";
-                if (method.security.length > 0) {
-                    console.log(method.security);
+                if (method.security.length < 1) {
+                    return (
+                        <div key={index} className="w-[76vw] mt-1 mb-3 h-auto border-[3px] p-2 pl-3 pt-1.5 border-greyed-text rounded">
+                            <span className="material-symbols-outlined align-text-bottom mr-2">{lock}</span>
+                            <span className="text-xl">None</span>
+                        </div>
+                    );
+                } else {
                     return method.security.map((security, index) => {
                         return (
-                            <div key={index} className="w-[76vw] mt-1 h-auto border-[3px] border-greyed-text rounded">
-                                <span className="material-symbols-outlined align-sub">{lock}</span>
+                            <div key={index} className="w-[76vw] mt-1 mb-3 h-auto border-[3px] p-2 pl-3 pt-1 border-greyed-text rounded">
+                                <span className="material-symbols-outlined align-text-bottom mr-2">{lock}</span>
                                 <span className="text-xl">{security.type}</span>
+                                <br className="mt-2 mb-2" />
+                                <span className="ml-1">{security.name}</span>
+                                <span className="ml-5 text-greyed-text">with value</span>
+                                <span className="ml-1"> {security.value}</span>
+                                <span className="ml-5 text-greyed-text">in {security.in}</span>
                             </div>
                         );
                     });
-                } else
-                    return (
-                        <div key={index} className="w-[76vw] mt-1 h-auto border-[3px] border-greyed-text rounded">
-                            <span className="material-symbols-outlined">{lock}</span>
-                            <span>None</span>
-                        </div>
-                    );
+                }
             })}
         </div>
     );

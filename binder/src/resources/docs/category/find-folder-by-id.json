@@ -6,11 +6,13 @@
         {
             "type": "Bearer token",
             "name": "Authorization",
-            "in": "header"
+            "value": "Bearer <token>",
+            "in": "headers"
         },
         {
             "type": "API key",
             "name": "api_key",
+            "value": "<api_key>",
             "in": "query"
         }
     ],

@@ -4,6 +4,7 @@ import EndpointPath from "@/app/ui/endpointpath";
 import { links } from "@/app/navbarlinks";
 import RequestMethod from "@/app/ui/requestmethod";
 import Security from "../ui/security";
+import Parameters from "../ui/parameters";
 
 export default function Documentation({
     params,
@@ -20,7 +21,8 @@ export default function Documentation({
             <EndpointPath params={{ path: "", category: docCategory }} />
             <EndpointInfo params={{ name: docName, description: documentObject.description }} />
             <RequestMethod method={documentObject.method} endpoint={documentObject.endpoint} />
-            <Security securityMethods={[documentObject]} />
+            <Security securityMethods={[documentObject]} />  {/* <-- why is this an array */}
+            <Parameters docProperties={documentObject} />
         </>
     );
 }
