@@ -1,0 +1,42 @@
+{
+    "description": "THis is the desc",
+    "method": "GET",
+    "endpoint": "/wow/endpoint/read/from/file",
+    "security": [
+        {
+            "type": "Bearer token",
+            "name": "Authorization",
+            "in": "header"
+        },
+        {
+            "type": "API key",
+            "name": "api_key",
+            "in": "query"
+        }
+    ],
+    "parameters": [
+        {
+            "name": "id",
+            "description": "The ID of the folder to retrieve",
+            "required": true,
+            "type": "string",
+            "in": "body"
+        }
+    ],
+    "responses": [
+        {
+            "status": 200,
+            "description": "The folder was found",
+            "schema": {
+                "id": {
+                    "type": "string",
+                    "description": "The ID of the folder"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the folder"
+                }
+            }
+        }
+    ]
+}

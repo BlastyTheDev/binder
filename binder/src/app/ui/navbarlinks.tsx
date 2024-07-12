@@ -6,11 +6,11 @@ import clsx from "clsx";
 import Category from "@/app/ui/category";
 import { links } from "@/app/navbarlinks";
 
-interface LinkProps {
+export default function NavbarLinks({
+    category,
+}: {
     category: string;
-}
-
-export default function NavbarLinks({ category }: LinkProps) {
+}) {
     const pathname = usePathname();
     const addCategory = category ? <Category name={category} /> : null;
     return (
