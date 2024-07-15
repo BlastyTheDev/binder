@@ -5,13 +5,13 @@
 
 *Italic*
 
-__Underline__
-
 <strike>Strikethrough</strike>
 
 [link](https://github.com/BlastyTheDev/binder)
 
-`monospace`
+`public static void main() {
+    System.out.println("hello world");
+}`
 
 ---
 
