@@ -1,0 +1,29 @@
+{
+    "description": "Find out whether a Discord username is able to be used to sign up",
+    "method": "GET",
+    "endpoint": "/api/v1/discord/is-user-valid",
+    "security": [
+    ],
+    "parameters": [
+        {
+            "name": "discord",
+            "description": "The username to validate",
+            "required": true,
+            "type": "string",
+            "in": "query"
+        }
+    ],
+    "responses": [
+        {
+            "status": 200,
+            "description": "Result determined",
+            "schema": [
+                {
+                    "name": "(no name)",
+                    "type": "boolean",
+                    "description": "true if the username is able to be used to sign up"
+                }
+            ]
+        }
+    ]
+}

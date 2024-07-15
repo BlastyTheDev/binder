@@ -1,0 +1,33 @@
+{
+    "description": "Returns the username of the provided Discord user if found in the server",
+    "method": "GET",
+    "endpoint": "/api/v1/discord/member",
+    "security": [
+    ],
+    "parameters": [
+        {
+            "name": "u",
+            "description": "The username of the user to search for",
+            "required": true,
+            "type": "string",
+            "in": "query"
+        }
+    ],
+    "responses": [
+        {
+            "status": 200,
+            "description": "User found",
+            "schema": [
+                {
+                    "name": "(no name)",
+                    "type": "string",
+                    "description": "The username of the user found"
+                }
+            ]
+        },
+        {
+            "status": 404,
+            "description": "A user with the provided username was not found in the server"
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "description": "Create a new Minecraft server",
+    "method": "POST",
+    "endpoint": "/api/v1/minecraft/create",
+    "security": [
+        {
+            "type": "Bearer token",
+            "name": "Authorization",
+            "value": "Bearer <token>",
+            "in": "headers"
+        }
+    ],
+    "parameters": [
+        {
+            "name": "name",
+            "description": "The name of the new server",
+            "required": true,
+            "type": "string",
+            "in": "body"
+        },
+        {
+            "name": "ram",
+            "description": "The maximum amount of RAM in MiB the new server should be allocated",
+            "required": true,
+            "type": "number",
+            "in": "body"
+        },
+        {
+            "name": "type",
+            "description": "The server software of the new server (IN CAPS)",
+            "required": true,
+            "type": "string",
+            "in": "body"
+        },
+        {
+            "name": "version",
+            "description": "The Minecraft version of the new server (eg. 1.21)",
+            "required": true,
+            "type": "string",
+            "in": "body"
+        },
+        {
+            "name": "build",
+            "description": "The build of the server software to be used, otherwise latest",
+            "required": false,
+            "type": "string",
+            "in": "body"
+        }
+    ],
+    "responses": [
+        {
+            "status": 200,
+            "description": "Successful server creation (software download), all response objects are within one parent",
+            "schema": [
+                {
+                    "name": "id",
+                    "type": "number",
+                    "description": "The ID of the created server"
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the created server"
+                },
+                {
+                    "name": "ram",
+                    "type": "number",
+                    "description": "The maximum allocated RAM (MiB) of the created server"
+                },
+                {
+                    "name": "server_type",
+                    "type": "string",
+                    "description": "The server software of the created server"
+                },
+                {
+                    "name": "owner_id",
+                    "type": "number",
+                    "description": "The ID of the owner (user account) of the created server"
+                },
+                {
+                    "name": "collaborators",
+                    "type": "array[number]",
+                    "description": "The IDs of the collaborators (user account(s)) of the created server"
+                }
+            ]
+        }
+    ]
+}

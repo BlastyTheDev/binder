@@ -1,0 +1,23 @@
+{
+    "description": "Log out of an account - revoke the JWT",
+    "method": "POST",
+    "endpoint": "/api/v1/auth/logout",
+    "security": [
+        {
+            "type": "Bearer token",
+            "name": "Authorization",
+            "value": "Bearer <token>",
+            "in": "headers"
+        }
+    ],
+    "parameters": [
+    ],
+    "responses": [
+        {
+            "status": 200,
+            "description": "Successful logout",
+            "schema": [
+            ]
+        }
+    ]
+}

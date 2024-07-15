@@ -1,0 +1,43 @@
+{
+    "description": "Sign up for an account - get JWT for authorization",
+    "method": "POST",
+    "endpoint": "/api/v1/auth/signup",
+    "security": [
+    ],
+    "parameters": [
+        {
+            "name": "username",
+            "description": "The username to sign up with",
+            "required": true,
+            "type": "string",
+            "in": "body"
+        },
+        {
+            "name": "password",
+            "description": "The password to set for the user",
+            "required": true,
+            "type": "string",
+            "in": "body"
+        },
+        {
+            "name": "discord",
+            "description": "The discord username of the user signing up",
+            "required": true,
+            "type": "string",
+            "in": "body"
+        }
+    ],
+    "responses": [
+        {
+            "status": 200,
+            "description": "Successful signup",
+            "schema": [
+                {
+                    "name": "(no name)",
+                    "type": "string",
+                    "description": "The JWT for authorization on other pages"
+                }
+            ]
+        }
+    ]
+}

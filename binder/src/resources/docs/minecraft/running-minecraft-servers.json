@@ -1,0 +1,32 @@
+{
+    "description": "Get a list of all running Minecraft servers",
+    "method": "GET",
+    "endpoint": "/api/v1/minecraft/list-running",
+    "security": [
+        {
+            "type": "Bearer token",
+            "name": "Authorization",
+            "value": "Bearer <token>",
+            "in": "headers"
+        }
+    ],
+    "parameters": [
+    ],
+    "responses": [
+        {
+            "status": 200,
+            "description": "Query successful",
+            "schema": [
+                {
+                    "name": "(no name)",
+                    "type": "array",
+                    "description": "List of all running minecraft servers including their database properties"
+                }
+            ]
+        },
+        {
+            "status": 403,
+            "description": "Forbidden - Only ADMIN accounts have permission to use this endpoint"
+        }
+    ]
+}

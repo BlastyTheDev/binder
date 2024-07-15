@@ -1,0 +1,36 @@
+{
+    "description": "Get a code to verify an account with the Discord username provided on signup",
+    "method": "GET",
+    "endpoint": "/api/v1/discord/verify",
+    "security": [
+        {
+            "type": "Bearer token",
+            "name": "Authorization",
+            "value": "Bearer <token>",
+            "in": "headers"
+        }
+    ],
+    "parameters": [
+    ],
+    "responses": [
+        {
+            "status": 200,
+            "description": "Verification started",
+            "schema": [
+                {
+                    "name": "(no name)",
+                    "type": "number",
+                    "description": "The code to DM the Discord bot used for verification"
+                }
+            ]
+        },
+        {
+            "status": 404,
+            "description": "The Discord username associated with this account is not in the server"
+        },
+        {
+            "status": 409,
+            "description": "The user has already verified their account with discord"
+        }
+    ]
+}

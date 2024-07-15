@@ -1,0 +1,36 @@
+{
+    "description": "Login to an account - get JWT for authorization",
+    "method": "POST",
+    "endpoint": "/api/v1/auth/login",
+    "security": [
+    ],
+    "parameters": [
+        {
+            "name": "username",
+            "description": "The username to login with",
+            "required": true,
+            "type": "string",
+            "in": "body"
+        },
+        {
+            "name": "password",
+            "description": "The password to authorize the login request",
+            "required": true,
+            "type": "string",
+            "in": "body"
+        }
+    ],
+    "responses": [
+        {
+            "status": 200,
+            "description": "Successful login",
+            "schema": [
+                {
+                    "name": "(no name)",
+                    "type": "string",
+                    "description": "The JWT for authorization on other pages"
+                }
+            ]
+        }
+    ]
+}
