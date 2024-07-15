@@ -29,16 +29,26 @@
         {
             "status": 200,
             "description": "The folder was found",
-            "schema": {
-                "id": {
+            "schema": [
+                {
+                    "name": "id",
                     "type": "string",
                     "description": "The ID of the folder"
                 },
-                "name": {
+                {
+                    "name": "name",
                     "type": "string",
                     "description": "The name of the folder"
                 }
-            }
+            ]
+        },
+        {
+            "status": 400,
+            "description": "Bad request"
+        },
+        {
+            "status": 401,
+            "description": "Unauthorized"
         }
     ]
 }

@@ -9,7 +9,7 @@ export default function RequestMethod({
     endpoint: string;
 }) {
     return (
-        <div className={clsx(`w-[76vw] h-12 mt-7 border-[3px] rounded ${roboto.className}`,
+        <div className={clsx(`w-full h-12 mt-7 border-[3px] rounded ${roboto.className}`,
             method === "GET" ? "border-get-method" : "",
             method === "POST" ? "border-post-method" : "",
             method === "PUT" ? "border-put-method" : "",

@@ -9,7 +9,7 @@ export default function Parameters({
     return (
         <div className="mt-7">
             <h2 className="text-2xl">Parameters</h2>
-            <div className="w-[76vw] mt-1 mb-3 h-auto border-[3px] p-3 pl-4 border-greyed-text rounded">
+            <div className="w-full mt-1 mb-3 h-auto border-[3px] p-3 pl-4 border-greyed-text rounded">
                 {docProperties.parameters.map((parameter, index) => {
                     return (
                         <div key={index} className="mt-0.5 mb-0.5">
