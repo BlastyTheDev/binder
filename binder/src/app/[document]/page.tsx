@@ -3,8 +3,9 @@ import * as fs from 'fs';
 import EndpointPath from "@/app/ui/endpointpath";
 import { links } from "@/app/navbarlinks";
 import RequestMethod from "@/app/ui/requestmethod";
-import Security from "../ui/security";
-import Parameters from "../ui/parameters";
+import Security from "@/app/ui/security";
+import Parameters from "@/app/ui/parameters";
+import Responses from "@/app/ui/responses";
 
 export default function Documentation({
     params,
@@ -23,6 +24,7 @@ export default function Documentation({
             <RequestMethod method={documentObject.method} endpoint={documentObject.endpoint} />
             <Security securityMethods={[documentObject]} />  {/* <-- why is this an array */}
             <Parameters docProperties={documentObject} />
+            <Responses documentJson={documentObject}/>
         </>
     );
 }
