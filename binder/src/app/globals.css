@@ -25,3 +25,42 @@ body {
     text-wrap: balance;
   }
 }
+
+.overview h1 {
+  font-size: 40px;
+}
+
+.overview h2 {
+  font-size: 32px;
+}
+
+.overview h3 {
+  font-size: 28px;
+}
+
+.overview a {
+  color: rgb(65, 65, 197);
+  text-decoration: underline;
+}
+
+.overview code {
+  border-color: #343434;
+  border-width: 1px;
+  border-radius: 3px;
+  background-color: #151515;
+  padding: 0.1rem;
+}
+
+.overview hr {
+  color: #343434;
+}
+
+.overview ul li {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.overview ol li {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+}

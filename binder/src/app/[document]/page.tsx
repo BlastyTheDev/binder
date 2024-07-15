@@ -23,7 +23,7 @@ export default function Documentation({
             <EndpointInfo params={{ name: docName, description: documentObject.description }} />
             <RequestMethod method={documentObject.method} endpoint={documentObject.endpoint} />
             <Security documentObject={documentObject} />
-            <Parameters docProperties={documentObject} />
+            <Parameters documentObject={documentObject} />
             <Responses documentJson={documentObject}/>
         </>
     );

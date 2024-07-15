@@ -8,7 +8,7 @@ export default function Responses({
 }) {
     return (
         <div className="mt-7">
-            <h2 className="text-2xl">Responses</h2>
+            <span className="text-2xl">Responses</span>
             {documentJson.responses.map((response, index) => {
                 let exampleResponseBody = <div className="mt-2">
                     <span className="">Response Contents</span>
