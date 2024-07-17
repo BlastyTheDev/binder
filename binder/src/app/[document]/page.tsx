@@ -1,5 +1,6 @@
 import EndpointInfo from "@/app/ui/endpointinfo";
 import * as fs from 'fs';
+import path from 'path';
 import EndpointPath from "@/app/ui/endpointpath";
 import { links } from "@/app/navbarlinks";
 import RequestMethod from "@/app/ui/requestmethod";
@@ -15,7 +16,7 @@ export default function Documentation({
     const docCategory = links.find(link => link.href === `/${params.document}`)?.category || "";
     const docName = links.find(link => link.href === `/${params.document}`)?.name || "";
 
-    const documentObject = JSON.parse(fs.readFileSync(`./src/resources/docs/${docCategory}/${params.document}.json`, 'utf-8'));
+    const documentObject = JSON.parse(fs.readFileSync(path.join(process.cwd(), `src/resources/docs/${docCategory}/${params.document}.json`), 'utf-8'));
 
     return (
         <>
