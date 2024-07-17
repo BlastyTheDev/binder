@@ -1,4 +1,4 @@
-import { roboto } from "@/app/layout";
+import { roboto } from "@/app/ui/fonts";
 import clsx from "clsx";
 
 export default function RequestMethod({
