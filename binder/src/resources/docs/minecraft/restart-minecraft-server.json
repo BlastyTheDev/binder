@@ -1,7 +1,7 @@
 {
-    "description": "Stop a Minecraft server",
+    "description": "Restart a Minecraft server",
     "method": "POST",
-    "endpoint": "/api/v1/minecraft/stop",
+    "endpoint": "/api/v1/minecraft/restart",
     "security": [
         {
             "type": "Bearer token",
@@ -13,7 +13,7 @@
     "parameters": [
         {
             "name": "server",
-            "description": "The ID of the server to stop",
+            "description": "The ID of the server to restart",
             "required": true,
             "type": "number",
             "in": "query"
@@ -22,13 +22,13 @@
     "responses": [
         {
             "status": 200,
-            "description": "Successful server stop",
+            "description": "Successful server restart",
             "schema": [
             ]
         },
         {
             "status": 403,
-            "description": "The user does not have permission to stop the server"
+            "description": "The user does not have permission to restart the server"
         },
         {
             "status": 404,

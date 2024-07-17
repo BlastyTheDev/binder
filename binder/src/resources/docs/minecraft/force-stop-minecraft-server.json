@@ -1,7 +1,7 @@
 {
-    "description": "Stop a Minecraft server",
+    "description": "Force stop a Minecraft server if it has failed to stop normally",
     "method": "POST",
-    "endpoint": "/api/v1/minecraft/stop",
+    "endpoint": "/api/v1/minecraft/force-stop",
     "security": [
         {
             "type": "Bearer token",
@@ -22,13 +22,13 @@
     "responses": [
         {
             "status": 200,
-            "description": "Successful server stop",
+            "description": "Successful server force stop",
             "schema": [
             ]
         },
         {
             "status": 403,
-            "description": "The user does not have permission to stop the server"
+            "description": "Forbidden - Only ADMIN accounts have permission to use this endpoint"
         },
         {
             "status": 404,

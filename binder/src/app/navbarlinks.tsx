@@ -15,4 +15,6 @@ export const links = [
     { category: "minecraft", name: "Create Minecraft Server", href: "/create-minecraft-server", icon: "article", method: "POST" },
     { category: "minecraft", name: "Start Minecraft Server", href: "/start-minecraft-server", icon: "article", method: "POST" },
     { category: "minecraft", name: "Stop Minecraft Server", href: "/stop-minecraft-server", icon: "article", method: "POST" },
+    { category: "minecraft", name: "Force Stop Minecraft Server", href: "/force-stop-minecraft-server", icon: "article", method: "POST" },
+    { category: "minecraft", name: "Restart Minecraft Server", href: "/restart-minecraft-server", icon: "article", method: "POST" },
 ];

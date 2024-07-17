@@ -32,6 +32,14 @@
             "description": "Successful server start",
             "schema": [
             ]
+        },
+        {
+            "status": 403,
+            "description": "The user does not have permission to restart the server"
+        },
+        {
+            "status": 404,
+            "description": "The server provided either does not exist or is not running"
         }
     ]
 }
