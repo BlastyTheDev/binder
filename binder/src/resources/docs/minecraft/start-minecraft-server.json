@@ -1,0 +1,30 @@
+{
+    "description": "Start a Minecraft server",
+    "method": "POST",
+    "endpoint": "/api/v1/minecraft/start",
+    "security": [
+        {
+            "type": "Bearer token",
+            "name": "Authorization",
+            "value": "Bearer <token>",
+            "in": "headers"
+        }
+    ],
+    "parameters": [
+        {
+            "name": "server",
+            "description": "The ID of the server to start",
+            "required": true,
+            "type": "number",
+            "in": "query"
+        }
+    ],
+    "responses": [
+        {
+            "status": 200,
+            "description": "Successful server start",
+            "schema": [
+            ]
+        }
+    ]
+}

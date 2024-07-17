@@ -1,0 +1,37 @@
+{
+    "description": "Send a command to a running Minecraft server",
+    "method": "POST",
+    "endpoint": "/api/v1/minecraft/send-command",
+    "security": [
+        {
+            "type": "Bearer token",
+            "name": "Authorization",
+            "value": "Bearer <token>",
+            "in": "headers"
+        }
+    ],
+    "parameters": [
+        {
+            "name": "server",
+            "description": "The ID of the server to send a command to",
+            "required": true,
+            "type": "number",
+            "in": "query"
+        },
+        {
+            "name": "(no name)",
+            "description": "The command to send to the server",
+            "required": true,
+            "type": "string",
+            "in": "body"
+        }
+    ],
+    "responses": [
+        {
+            "status": 200,
+            "description": "Successful server start",
+            "schema": [
+            ]
+        }
+    ]
+}

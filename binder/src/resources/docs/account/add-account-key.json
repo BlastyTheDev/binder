@@ -1,0 +1,42 @@
+{
+    "description": "Add an account key to the user's account for permissions",
+    "method": "POST",
+    "endpoint": "/api/v1/account/add-key",
+    "security": [
+        {
+            "type": "Bearer token",
+            "name": "Authorization",
+            "value": "Bearer <token>",
+            "in": "headers"
+        }
+    ],
+    "parameters": [
+        {
+            "name": "(no name)",
+            "description": "The key to use",
+            "required": true,
+            "type": "string",
+            "in": "body"
+        }
+    ],
+    "responses": [
+        {
+            "status": 200,
+            "description": "Successful account permission grant",
+            "schema": [
+            ]
+        },
+        {
+            "status": 404,
+            "description": "The key provided does not exist"
+        },
+        {
+            "status": 406,
+            "description": "The user has not completed Discord verification"
+        },
+        {
+            "status": 409,
+            "description": "The user has already linked a key"
+        }
+    ]
+}

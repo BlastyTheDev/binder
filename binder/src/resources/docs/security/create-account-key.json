@@ -1,0 +1,39 @@
+{
+    "description": "Create an account key with a specified tier",
+    "method": "GET",
+    "endpoint": "/api/v1/admin/create-key",
+    "security": [
+        {
+            "type": "Bearer token",
+            "name": "Authorization",
+            "value": "Bearer <token>",
+            "in": "headers"
+        }
+    ],
+    "parameters": [
+        {
+            "name": "(no name)",
+            "description": "The tier of the account key (CAPS)",
+            "required": true,
+            "type": "string",
+            "in": "body"
+        }
+    ],
+    "responses": [
+        {
+            "status": 200,
+            "description": "Successful account key creation",
+            "schema": [
+                {
+                    "name": "(no name)",
+                    "type": "string",
+                    "description": "The value of the created key"
+                }
+            ]
+        },
+        {
+            "status": 403,
+            "description": "Forbidden - Only ADMIN accounts have permission to use this endpoint"
+        }
+    ]
+}

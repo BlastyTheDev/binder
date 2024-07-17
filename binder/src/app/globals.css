@@ -32,10 +32,12 @@ body {
 
 .overview h2 {
   font-size: 32px;
+  margin-top: 1rem;
 }
 
 .overview h3 {
   font-size: 28px;
+  margin-top: 1rem;
 }
 
 .overview a {
